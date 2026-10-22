@@ -15,6 +15,14 @@ npm run dev
 Open the local URL printed by Vite. To create a production build, run
 `npm run build`.
 
+## GitHub Pages
+
+Pushing to `main` runs the Pages deployment workflow. After the first successful
+deployment, the dashboard is available at
+<https://mubashir142.github.io/Gis-dashboard/>. In the repository settings, set
+**Pages > Build and deployment > Source** to **GitHub Actions** if it is not
+already selected.
+
 ## Facility data endpoint
 
 By default, the app requests the bundled GeoJSON fixture at

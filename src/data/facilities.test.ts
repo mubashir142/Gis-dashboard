@@ -50,6 +50,23 @@ describe('fetchFacilities', () => {
     })
   })
 
+  it('loads the bundled fixture from the GitHub Pages project path', async () => {
+    vi.stubEnv('BASE_URL', '/Gis-dashboard/')
+    const fetchMock = vi.spyOn(globalThis, 'fetch').mockResolvedValue(
+      new Response(JSON.stringify(featureCollection()), { status: 200 }),
+    )
+
+    await fetchFacilities()
+
+    expect(fetchMock).toHaveBeenCalledWith(
+      '/Gis-dashboard/data/islamabad-services.geojson',
+      {
+        signal: undefined,
+        headers: { Accept: 'application/geo+json, application/json' },
+      },
+    )
+  })
+
   it('uses a configured REST endpoint and forwards cancellation', async () => {
     vi.stubEnv('VITE_FACILITIES_API_URL', 'https://api.example.test/facilities')
     const controller = new AbortController()

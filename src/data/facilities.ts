@@ -123,7 +123,8 @@ function toFacility(feature: OSMFeature): Facility {
 
 export async function fetchFacilities(signal?: AbortSignal): Promise<Facility[]> {
   const endpoint =
-    import.meta.env.VITE_FACILITIES_API_URL || '/data/islamabad-services.geojson'
+    import.meta.env.VITE_FACILITIES_API_URL ||
+    `${import.meta.env.BASE_URL}data/islamabad-services.geojson`
   const response = await fetch(endpoint, {
     signal,
     headers: { Accept: 'application/geo+json, application/json' },
