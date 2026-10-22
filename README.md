@@ -1,5 +1,7 @@
 # SpatialView
 
+[Open the live SpatialView dashboard](https://mubashir142.github.io/Gis-dashboard/)
+
 SpatialView is a responsive React + Vite geospatial dashboard for exploring
 service locations in Islamabad. It uses Tailwind CSS with dashboard styling,
 React-Leaflet for mapping, Recharts for analytics, and Lucide for interface
